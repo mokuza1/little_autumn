@@ -1,11 +1,43 @@
-<div class="container pt-3"><div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3"><input class="form-control" placeholder="検索ワード" type="search"/>
-          <div class="input-group-append"><input type="submit" value="検索" class="btn btn-primary"/></div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- ヘッダー部分 -->
+      <div class="text-center mb-4">
+        <h1 class="display-4">だれかの見つけた秋</h1>
+      </div>
+      <%= render 'shared/flash_messages' %>
+      <!-- 投稿一覧 -->
+      <% if @posts.any? %>
+        <div class="posts-container">
+          <% @posts.each_with_index do |post, index| %>
+            <div class="card mb-3 shadow-sm">
+              <div class="card-body">
+                <p class="card-text"><%= simple_format(post.content) %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </form>
+
+        <!-- 新規投稿リンク -->
+        <div class="text-center mt-5 mb-5">
+          <%= link_to "自分も知らせに行く", new_post_path, class: "btn btn-primary btn-lg", data: { turbo: false } %>
+        </div>
+        <!-- ページ更新ボタン -->
+        <div class="text-center mb-4">
+          <%= link_to "ほかの秋も見る", posts_path, class: "btn btn-outline-primary btn-lg", data: { turbo_method: :get } %>
+        </div>
+      <% else %>
+        <!-- 投稿がない場合 -->
+        <div class="text-center">
+          <div class="card border-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted">まだ投稿がありません</h5>
+              <p class="card-text">最初の投稿をしてみましょう！</p>
+              <%= link_to "投稿する", new_post_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
