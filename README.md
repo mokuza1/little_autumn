@@ -1,24 +1,10 @@
-# README
+# ちいさい秋って、どこいった？
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##概要
+生活している中で見つけた小さな秋の気配を、投稿して誰かと共有できるwebアプリケーションです。
 
-Things you may want to cover:
+##使用技術
+・HTML
+・CSS
+・Ruby on Rails
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
