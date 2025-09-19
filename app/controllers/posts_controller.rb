@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       if @post.save
         redirect_to posts_path, notice: '知らせてくれてありがとう'
       else
-        render :top, status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
     end
 
