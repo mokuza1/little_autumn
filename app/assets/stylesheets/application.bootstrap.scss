@@ -1,2 +1,155 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+body.app-background {
+  background-image: url('autumn.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.flash-wrapper {
+  max-width: 400px;     /*横幅の最大値（例：500px） */
+  margin: 0 auto;        /*中央寄せ */
+}
+
+
+.text-red {
+  color: #af3200; /* 秋っぽいオレンジブラウン系の色 */
+}
+
+.display-4{
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #232323;
+    background: #f8f5f0;
+    border-left: solid 20px #ec6414;
+    white-space: nowrap;    /* 改行を防ぐ */
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title-wrapper {
+  width: 100%;
+  max-width: 500px;     /*横幅を制限（例：400px） */
+  margin: 0 auto;      /* 中央寄せ*/
+  padding: 0 1em;
+} 
+
+.custom-textarea {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 1em;
+  background-color: #ffffff;
+  font-size: 1.3rem;
+  align-items: center;         /* 垂直方向の中央揃え */
+  resize: none;
+  height: 6em;
+  text-align: center;
+  padding-top: 2.2em; /* 高さの半分くらいに調整して中央に見せる */
+  padding-bottom: 0.5em; /* 下の余白も少し確保するとバランスが良い */
+}
+
+/*めくれた紙風*/
+.cstm-box-paper {
+  max-width: 500px;
+  margin: 0 auto 2em;
+  padding: 0.2em;
+  background-color: #f2f3f4;
+  position: relative;
+  border-radius: 8px; /* 角丸でやさしさを追加 */
+}
+
+.cstm-box-paper::after {
+  content: '';
+  max-width: 500px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-width: 0 25px 25px 0;
+  border-style: solid;
+  border-color: #ccc #f4d7a1 #ccc;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* 深緑の投稿系ボタン（背景：深緑、枠線：白、文字：白） */
+.btn-deepgreen {
+  background-color: #2f5d50; /* 深緑 */
+  color: white;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.btn-deepgreen:hover {
+  background-color: #264a40; /* 少し濃い深緑 */
+  color: white;
+  border: 2px solid white;
+}
+
+/* 白背景の一覧系ボタン（背景：白、枠線：深緑、文字：深緑） */
+.btn-white-outline {
+  background-color: white;
+  color: #2f5d50;
+  border: 2px solid #2f5d50;
+  transition: all 0.3s ease;
+}
+
+.btn-white-outline:hover {
+  background-color: #f5f5f5; /* 薄いグレー背景 */
+  color: #2f5d50;
+  border: 2px solid #2f5d50;
+}
+
+.custom-card {
+  position: relative;
+  z-index: 0;
+  max-width: 450px;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: #fffefd; /* 薄いベージュで布感 */
+  border-radius: 10px;
+}
+
+/* ステッチ風の縁取り */
+.custom-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: 5px;
+  border: 1.5px dashed #a79a8b; /* 茶系のステッチ色 */
+  border-radius: 10px;
+  z-index: -1;
+  display: block;
+}
+
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;     /* 縦方向に並べる */
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center;     /* 縦方向の中央揃え */
+  min-height: 100px;       /* 高さを確保（必要に応じて調整） */
+  text-align: center;      /* テキストを中央揃え */
+  overflow: auto;              /* 内容が溢れたらスクロールバー表示 */
+}
+
+.custom-card .card-body p {
+  max-width: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+.card-text {
+  font-size: 1.4rem;     /* 例：少し大きめの文字サイズ */
+  line-height: 1.6;      /* 読みやすさのための行間 */
+  font-weight: bold;
+}
