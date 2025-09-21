@@ -13,12 +13,12 @@
       <!-- 入力フォーム -->
       <div class="mb-4">
         <div class="">
-          <%= form_with model: @post, url: posts_path, local: true, class: "mb-3" do |f| %>
+          <%= form_with model: @post, url: posts_path, local: true, html: { class: "mb-3" } do |f| %>
             <div class="mb-5 cstm-box-paper">
               <%= f.text_area :content, class: "form-control text-center custom-textarea", rows: 3, style: "resize: none; justify-content: center;" %>
-                <%= render 'shared/error_messages', object: @post %>
-                </div>
+              <%= render 'shared/error_messages', object: @post %>
             </div>
+            
             
             <!-- 投稿ボタン -->
             <div class="text-center mb-4">
