@@ -88,8 +88,8 @@ production:
   username: myapp
   password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
   # ↓ この部分を追加
-cable:
-  <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+#cable:
+  #<<: *default
+  #database: myapp_production
+  #username: myapp
+  #password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
