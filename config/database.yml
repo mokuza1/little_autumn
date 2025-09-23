@@ -25,8 +25,15 @@ default: &default
 
 
 development:
-  <<: *default
-  database: myapp_development
+  primary: &primary_development
+    <<: *default
+    database: myapp_development
+  cable:
+    <<: *primary_development
+  queue:
+    <<: *primary_development
+  cache:
+    <<: *primary_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -83,10 +90,17 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+  primary: &primary_production
+    <<: *default
+    database: myapp_production
+    username: myapp
+    password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+  cable:
+    <<: *primary_production
+  queue:
+    <<: *primary_production
+  cache:
+    <<: *primary_production
   # ↓ この部分を追加
 #cable:
   #<<: *default
